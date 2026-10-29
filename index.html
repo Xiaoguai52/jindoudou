@@ -167,6 +167,18 @@ html[data-theme="halloween"] .featured{border:2px solid #3b2a63;box-shadow:0 0 0
 .featured .cap{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 13px;background:linear-gradient(transparent,rgba(5,8,20,.78));color:#fff}
 .featured .cap .en{font-size:10px;letter-spacing:.34em;color:rgba(255,255,255,.65)}
 .featured .cap .txt{font-size:17px}
+.post{position:relative;border:1px solid rgba(28,36,52,.12);border-radius:16px;background:#fff;padding:16px 16px 14px;margin-bottom:16px}
+html[data-theme="halloween"] .post.latest{border:2px solid #3b2a63;box-shadow:0 0 0 4px rgba(59,42,99,.12)}
+.post-head{display:flex;justify-content:space-between;align-items:center}
+.badge-static{background:linear-gradient(135deg,#d9ab4e,#b8862e);color:#fff;font-size:12px;letter-spacing:.14em;padding:4px 12px;border-radius:999px}
+.badge-static.gray{background:#8a93a5}
+.post-date{font-size:12px;color:var(--ink-soft);letter-spacing:.14em}
+.post-title{font-size:19px;font-weight:600;margin-top:9px}
+.post-from{font-size:12.5px;color:var(--ink-soft);margin-bottom:11px}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.pgrid img{width:100%;height:158px;object-fit:cover;border-radius:9px;cursor:zoom-in;filter:saturate(1.05) sepia(.08)}
+.post-single{width:100%;height:300px;object-fit:cover;border-radius:11px;cursor:zoom-in;filter:saturate(1.05) sepia(.08)}
+.post .hw-frame-tag{top:54px}
 .hw-frame-tag{display:none;position:absolute;right:14px;top:14px;font-size:10px;letter-spacing:.3em;color:#ffb066;border:1px solid rgba(240,138,36,.6);padding:4px 10px;border-radius:999px;background:rgba(10,6,20,.45);z-index:2}
 html[data-theme="halloween"] .hw-frame-tag{display:block}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -217,6 +229,8 @@ html[data-theme="halloween"] footer .hw-line{display:block}
   .ghost{font-size:54px}
   .moon{width:84px;height:84px;top:118px;right:4%}
   .featured img{height:250px}
+  .pgrid img{height:106px}
+  .post-single{height:215px}
   .id-grid{grid-template-columns:1fr 1fr;gap:11px 14px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -384,19 +398,29 @@ html[data-theme="halloween"] footer .hw-line{display:block}
       <button type="button" data-f="car">坐车</button>
       <button type="button" data-f="moments">朋友圈</button>
     </div>
-    <div class="featured" data-cat="moments">
-      <span class="badge">朋友圈 · 最新一条</span>
-      <span class="hw-frame-tag">HAPPY HALLOWEEN</span>
-      <img src="assets/moments-20261029b-1.jpg" alt="金豆豆坐着低头盯着地上的蛾子" data-cap="朋友圈 · 追着人家🦋杀 · 2026 年 10 月 29 日">
-      <div class="cap"><div class="en num">MOMENTS · 2026-10-29</div><div class="txt">追着人家🦋杀</div></div>
+    <div id="momentsFeed">
+      <article class="post latest">
+        <span class="hw-frame-tag">HAPPY HALLOWEEN</span>
+        <div class="post-head"><span class="badge-static">朋友圈 · 最新一条</span><span class="post-date num">2026-10-29</span></div>
+        <div class="post-title">追着人家🦋杀</div>
+        <div class="post-from">金豆豆老妈 · 微信朋友圈 · 共 6 张</div>
+        <div class="pgrid">
+          <img src="assets/moments-20261029b-1.jpg" alt="金豆豆坐着低头盯着地上的蛾子" data-cap="追着人家🦋杀 · 1/6 对峙">
+          <img src="assets/moments-20261029b-2.jpg" alt="金豆豆在地板上伏身追击蛾子" data-cap="追着人家🦋杀 · 2/6 追击瞬间">
+          <img src="assets/moments-20261029b-3.jpg" alt="金豆豆坐在猫砂袋旁守着蛾子" data-cap="追着人家🦋杀 · 3/6 猫砂旁的守候">
+          <img src="assets/moments-20261029b-4.jpg" alt="蛾子特写" data-cap="追着人家🦋杀 · 4/6 「蝴蝶」本蝶">
+          <img src="assets/moments-20261029b-5.jpg" alt="金豆豆的背影" data-cap="追着人家🦋杀 · 5/6 收兵的背影">
+          <img src="assets/moments-20261029b-6.jpg" alt="金豆豆伸出爪子够蛾子" data-cap="追着人家🦋杀 · 6/6 伸爪够它">
+        </div>
+      </article>
+      <article class="post">
+        <div class="post-head"><span class="badge-static gray">朋友圈</span><span class="post-date num">2026-10-29</span></div>
+        <div class="post-title">周末美好睡大觉</div>
+        <div class="post-from">金豆豆老妈 · 微信朋友圈</div>
+        <img class="post-single" src="assets/moments-20261029.jpg" alt="金豆豆在粉色窗帘旁睡大觉" data-cap="朋友圈 · 周末美好睡大觉 · 2026 年 10 月 29 日">
+      </article>
     </div>
     <div class="grid" id="grid">
-      <div class="cell" data-cat="moments"><img src="assets/moments-20261029b-2.jpg" alt="金豆豆在地板上伏身追击蛾子" data-cap="追着人家🦋杀 · 追击瞬间"><div class="cap"><span class="en">MOMENTS</span>追击瞬间</div></div>
-      <div class="cell" data-cat="moments"><img src="assets/moments-20261029b-6.jpg" alt="金豆豆伸出爪子够蛾子" data-cap="追着人家🦋杀 · 伸爪够它"><div class="cap"><span class="en">MOMENTS</span>伸爪！够它</div></div>
-      <div class="cell" data-cat="moments"><img src="assets/moments-20261029b-3.jpg" alt="金豆豆坐在猫砂袋旁守着蛾子" data-cap="追着人家🦋杀 · 猫砂旁的守候"><div class="cap"><span class="en">MOMENTS</span>猫砂旁的守候</div></div>
-      <div class="cell" data-cat="moments"><img src="assets/moments-20261029b-4.jpg" alt="蛾子特写" data-cap="追着人家🦋杀 · 「蝴蝶」本蝶"><div class="cap"><span class="en">MOMENTS</span>「蝴蝶」本蝶</div></div>
-      <div class="cell" data-cat="moments"><img src="assets/moments-20261029b-5.jpg" alt="金豆豆的背影" data-cap="追着人家🦋杀 · 收兵的背影"><div class="cap"><span class="en">MOMENTS</span>收兵的背影</div></div>
-      <div class="cell" data-cat="moments"><img src="assets/moments-20261029.jpg" alt="金豆豆在粉色窗帘旁睡大觉" data-cap="朋友圈 · 周末美好睡大觉 · 2026 年 10 月 29 日"><div class="cap"><span class="en">MOMENTS</span>周末美好睡大觉</div></div>
       <div class="cell" data-cat="car"><img src="assets/p8.jpg" alt="金豆豆在车里坐姿端正" data-cap="坐姿端正的模范乘客（头像原图）"><div class="cap"><span class="en">IN THE CAR</span>模范乘客 · 头像原图</div></div>
       <div class="cell" data-cat="car"><img src="assets/p7.jpg" alt="金豆豆在车里张嘴叫" data-cap="坐车也要发表意见"><div class="cap"><span class="en">IN THE CAR</span>坐车也要发表意见</div></div>
       <div class="cell" data-cat="daily"><img src="assets/p3.jpg" alt="金豆豆趴在地上抬头看镜头" data-cap="抬头杀 · 金瞳正脸"><div class="cap"><span class="en">DAILY</span>抬头杀 · 金瞳正脸</div></div>
@@ -509,23 +533,25 @@ html[data-theme="halloween"] footer .hw-line{display:block}
   var dp=document.getElementById('dividerPumpkin');
   if(dp) dp.addEventListener('click',function(){ var r=dp.getBoundingClientRect(); showEgg(r.left+window.scrollX-30, r.top+window.scrollY); });
 
-  /* 相册筛选 */
-  var featured=document.querySelector('.featured');
+  /* 相册筛选：朋友圈是整帖区块，日常/坐车在网格里 */
+  var feed=document.getElementById('momentsFeed');
+  var gridEl=document.getElementById('grid');
   var cells=Array.prototype.slice.call(document.querySelectorAll('#grid .cell'));
   document.querySelectorAll('.filters button').forEach(function(btn){
     btn.addEventListener('click',function(){
       document.querySelectorAll('.filters button').forEach(function(b){b.classList.remove('on');});
       btn.classList.add('on');
       var f=btn.getAttribute('data-f');
-      featured.style.display=(f==='all'||f==='moments')?'':'none';
+      feed.style.display=(f==='all'||f==='moments')?'':'none';
+      gridEl.style.display=(f==='moments')?'none':'';
       cells.forEach(function(c){ c.classList.toggle('hide', !(f==='all'||c.getAttribute('data-cat')===f)); });
     });
   });
 
   /* 灯箱 */
-  var imgs=[featured.querySelector('img')].concat(cells.map(function(c){return c.querySelector('img');}));
+  var imgs=Array.prototype.slice.call(document.querySelectorAll('#momentsFeed img, #grid img'));
   var lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCap'), idx=0;
-  function visibleImgs(){ return imgs.filter(function(im){ var p=im.closest('.featured,.cell'); return p && p.style.display!=='none' && !p.classList.contains('hide'); }); }
+  function visibleImgs(){ return imgs.filter(function(im){ return im.offsetParent!==null; }); }
   function openLb(im){ var v=visibleImgs(); idx=Math.max(0,v.indexOf(im)); render(); lb.classList.add('open'); document.body.style.overflow='hidden'; }
   function render(){ var v=visibleImgs(); var im=v[idx]; if(!im) return; lbImg.src=im.src; lbImg.alt=im.alt; lbCap.textContent=im.getAttribute('data-cap')||im.alt; }
   function step(d){ var v=visibleImgs(); idx=(idx+d+v.length)%v.length; render(); }
