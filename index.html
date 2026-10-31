@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>金豆豆的宠物档案 · Jin Doudou</title>
-<meta name="description" content="蓝猫金豆豆的宠物档案：身份、健康、相册与成长记录。">
+<meta name="description" content="蓝猫金豆豆的宠物档案：身份、健康、相册、朋友圈与成长记录。">
 <link rel="icon" type="image/png" href="assets/avatar.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="金豆豆的宠物档案">
 <meta property="og:title" content="金豆豆的宠物档案 · Jin Doudou">
-<meta property="og:description" content="英国短毛猫（蓝猫）金豆豆的专属档案：豆豆身份证、健康驾驶舱、相册与成长故事。">
+<meta property="og:description" content="英国短毛猫（蓝猫）金豆豆的专属档案：豆豆身份证、健康驾驶舱、相册、朋友圈与成长故事。">
 <meta property="og:url" content="https://jindoudou.pages.dev/">
 <meta property="og:image" content="https://jindoudou.pages.dev/assets/share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="金豆豆的宠物档案 · Jin Doudou">
-<meta name="twitter:description" content="英国短毛猫（蓝猫）金豆豆的专属档案：豆豆身份证、健康驾驶舱、相册与成长故事。">
+<meta name="twitter:description" content="英国短毛猫（蓝猫）金豆豆的专属档案：豆豆身份证、健康驾驶舱、相册、朋友圈与成长故事。">
 <meta name="twitter:image" content="https://jindoudou.pages.dev/assets/share.jpg">
 <style>
 :root{
@@ -40,7 +40,7 @@ img{display:block;max-width:100%}
 .wrap{max-width:880px;margin:0 auto;padding:0 20px}
 
 /* ---------- HERO ---------- */
-.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(160deg,var(--navy-0) 0%,var(--navy-1) 55%,var(--navy-2) 100%);padding:26px 0 0}
+.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(160deg,var(--navy-0) 0%,var(--navy-1) 55%,var(--navy-2) 100%);padding:26px 0 34px}
 .hero::before{content:"";position:absolute;inset:0;background:
   radial-gradient(1.5px 1.5px at 12% 22%,rgba(255,255,255,.9) 50%,transparent 51%),
   radial-gradient(1px 1px at 28% 64%,rgba(255,255,255,.6) 50%,transparent 51%),
@@ -72,9 +72,10 @@ html[data-theme="halloween"] .witch-hat{display:block}
 .hero-name{font-size:64px;font-weight:600;line-height:1.15;letter-spacing:.04em;margin:6px 0 2px}
 html[data-theme="halloween"] .hero-name{text-shadow:0 0 26px rgba(240,138,36,.35)}
 .hero-sub{color:rgba(255,255,255,.78);font-size:15px;letter-spacing:.06em}
+.hero-notes{margin-top:10px;font-size:13px;line-height:1.8;color:rgba(255,255,255,.62);max-width:520px}
 .hw-banner{display:none;margin-top:12px;font-size:12px;letter-spacing:.34em;color:#ffb066;text-shadow:0 0 12px rgba(240,138,36,.8)}
 html[data-theme="halloween"] .hw-banner{display:block}
-.stats{margin:22px 0 0;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--hair-light);border-radius:14px;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);overflow:hidden}
+.stats{margin:22px 0 0;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--hair-light);border-radius:14px;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);overflow:hidden}
 .stat{padding:13px 10px 11px;text-align:center}
 .stat+.stat{border-left:1px solid var(--hair-light)}
 .stat b{display:block;font-size:19px;font-weight:600;line-height:1.3}
@@ -97,17 +98,24 @@ html[data-theme="halloween"] .fog{display:block}
 .egg{position:absolute;z-index:9;background:#fff;color:#7a3c00;font-size:13px;padding:6px 14px;border-radius:999px;box-shadow:0 6px 22px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .25s;white-space:nowrap}
 .egg.show{opacity:1}
 
+/* ---------- TABS ---------- */
+.tabbar{position:sticky;top:0;z-index:40;background:rgba(250,247,241,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair)}
+.tabbar-in{display:flex;gap:4px;max-width:880px;margin:0 auto;padding:8px 20px}
+.tabbtn{appearance:none;border:1px solid transparent;background:transparent;font-size:15px;letter-spacing:.18em;padding:8px 20px;border-radius:999px;cursor:pointer;color:var(--ink-soft);font-family:inherit}
+.tabbtn.on{background:var(--navy-1);color:#fff;font-weight:600}
+html[data-theme="halloween"] .tabbtn.on{background:var(--accent);color:#1c1002}
+.tabpage{display:none}
+.tabpage.on{display:block}
+
 /* ---------- SECTIONS ---------- */
-section{padding:54px 0 8px;position:relative}
+section{padding:46px 0 8px;position:relative}
+.tabpage section:first-child{padding-top:34px}
 .sec-head{display:flex;align-items:flex-end;gap:16px;margin-bottom:24px}
 .ghost{font-size:74px;line-height:.8;font-weight:700;color:transparent;-webkit-text-stroke:1.2px rgba(28,36,52,.16);font-family:Georgia,serif}
 .sec-titles .kicker{color:var(--accent)}
 .sec-titles h2{font-size:29px;font-weight:600;letter-spacing:.05em;line-height:1.35}
 .sec-line{flex:1;height:1px;background:linear-gradient(90deg,var(--hair),transparent);margin-bottom:12px}
-.hw-divider{display:none;justify-content:center;align-items:center;gap:14px;padding-top:38px}
-html[data-theme="halloween"] .hw-divider{display:flex}
-.hw-divider .dot{width:6px;height:6px;border-radius:50%}
-.reveal{opacity:1}
+.page-note{font-size:13.5px;color:var(--ink-soft);margin:-8px 0 20px;letter-spacing:.04em}
 
 /* ID card */
 .idcard{position:relative;border-radius:18px;padding:26px 26px 20px;color:#eef1f8;background:linear-gradient(135deg,var(--navy-1),var(--navy-2));border:1px solid var(--hair);overflow:hidden;box-shadow:0 18px 40px rgba(10,17,40,.25)}
@@ -136,10 +144,11 @@ html[data-theme="halloween"] .holo{display:block;animation:breathe 3.6s ease-in-
 .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .hcell{border:1px solid rgba(28,36,52,.1);border-radius:14px;padding:18px 16px;background:#fff}
 .hcell .lab{font-size:11px;letter-spacing:.3em;color:var(--ink-soft)}
-.hcell .big{font-size:31px;font-weight:600;line-height:1.3;margin-top:2px}
+.hcell .big{font-size:29px;font-weight:600;line-height:1.3;margin-top:2px}
 .hcell .sub{font-size:13px;color:var(--ink-soft)}
-.pill{display:inline-block;border:1.4px solid var(--accent);color:#8a6408;border-radius:999px;padding:1px 12px;font-size:12px;letter-spacing:.08em;margin-top:6px}
-html[data-theme="halloween"] .pill{color:#c96a00}
+.todo{margin-top:16px;border:1px solid rgba(200,90,40,.35);background:#fff7ef;border-radius:14px;padding:15px 18px;font-size:14px}
+.todo b{color:#b44a12}
+html[data-theme="halloween"] .todo{background:#17102e;border-color:rgba(240,138,36,.45);color:#f3e9ff}
 .scale{margin-top:16px;border:1px solid rgba(28,36,52,.1);border-radius:14px;background:#fff;padding:20px 18px 14px}
 .scale-track{position:relative;height:34px;margin-top:26px}
 .scale-line{position:absolute;left:0;right:0;top:16px;height:2px;background:repeating-linear-gradient(90deg,rgba(28,36,52,.35) 0 1px,transparent 1px 10%);background-size:100% 8px;background-repeat:no-repeat;background-position:bottom}
@@ -148,25 +157,16 @@ html[data-theme="halloween"] .pill{color:#c96a00}
 .marker i{display:block;font-style:normal;font-size:17px;line-height:1}
 .scale-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-soft);letter-spacing:.14em;margin-top:6px}
 .note{font-size:12.5px;color:var(--ink-soft);margin-top:10px}
-.records{margin-top:16px;border-top:1px solid rgba(28,36,52,.1)}
+.records{margin-top:6px;border-top:1px solid rgba(28,36,52,.1)}
 .rec{display:flex;gap:14px;padding:13px 2px;border-bottom:1px solid rgba(28,36,52,.08);align-items:baseline}
 .rec .d{font-size:13px;color:var(--ink-soft);white-space:nowrap;min-width:118px}
 .rec .t{font-weight:600}
 .rec .t i{font-style:normal;width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:9px}
 .rec .x{color:var(--ink-soft);font-size:14px}
+.rec .cat{font-style:normal;font-size:11px;border:1px solid var(--accent);color:#8a6408;border-radius:999px;padding:0 8px;margin-right:8px;letter-spacing:.06em}
+html[data-theme="halloween"] .rec .cat{color:#c96a00}
 
-/* gallery */
-.filters{display:flex;gap:9px;margin-bottom:18px;flex-wrap:wrap}
-.filters button{appearance:none;border:1px solid rgba(28,36,52,.2);background:transparent;border-radius:999px;padding:6px 18px;font-size:13px;letter-spacing:.1em;cursor:pointer;color:var(--ink)}
-.filters button.on{background:var(--navy-1);color:#fff;border-color:var(--navy-1)}
-html[data-theme="halloween"] .filters button.on{background:var(--accent);border-color:var(--accent);color:#1c1002}
-.featured{position:relative;border-radius:16px;overflow:hidden;margin-bottom:16px;border:1px solid rgba(28,36,52,.12)}
-html[data-theme="halloween"] .featured{border:2px solid #3b2a63;box-shadow:0 0 0 4px rgba(59,42,99,.15)}
-.featured img{width:100%;height:340px;object-fit:cover;filter:saturate(1.05) sepia(.08)}
-.badge{position:absolute;top:14px;left:14px;background:linear-gradient(135deg,#d9ab4e,#b8862e);color:#fff;font-size:12px;letter-spacing:.14em;padding:5px 13px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:2}
-.featured .cap{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 13px;background:linear-gradient(transparent,rgba(5,8,20,.78));color:#fff}
-.featured .cap .en{font-size:10px;letter-spacing:.34em;color:rgba(255,255,255,.65)}
-.featured .cap .txt{font-size:17px}
+/* posts (moments) */
 .post{position:relative;border:1px solid rgba(28,36,52,.12);border-radius:16px;background:#fff;padding:16px 16px 14px;margin-bottom:16px}
 html[data-theme="halloween"] .post.latest{border:2px solid #3b2a63;box-shadow:0 0 0 4px rgba(59,42,99,.12)}
 .post-head{display:flex;justify-content:space-between;align-items:center}
@@ -175,23 +175,52 @@ html[data-theme="halloween"] .post.latest{border:2px solid #3b2a63;box-shadow:0 
 .post-date{font-size:12px;color:var(--ink-soft);letter-spacing:.14em}
 .post-title{font-size:19px;font-weight:600;margin-top:9px}
 .post-from{font-size:12.5px;color:var(--ink-soft);margin-bottom:11px}
+.post-foot{font-size:12px;color:var(--ink-soft);letter-spacing:.08em;margin-top:11px}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
 .pgrid img{width:100%;height:158px;object-fit:cover;border-radius:9px;cursor:zoom-in;filter:saturate(1.05) sepia(.08)}
 .post-single{width:100%;height:300px;object-fit:cover;border-radius:11px;cursor:zoom-in;filter:saturate(1.05) sepia(.08)}
-.post .hw-frame-tag{top:54px}
-.hw-frame-tag{display:none;position:absolute;right:14px;top:14px;font-size:10px;letter-spacing:.3em;color:#ffb066;border:1px solid rgba(240,138,36,.6);padding:4px 10px;border-radius:999px;background:rgba(10,6,20,.45);z-index:2}
+.hw-frame-tag{display:none;position:absolute;right:14px;top:54px;font-size:10px;letter-spacing:.3em;color:#ffb066;border:1px solid rgba(240,138,36,.6);padding:4px 10px;border-radius:999px;background:rgba(10,6,20,.45);z-index:2}
 html[data-theme="halloween"] .hw-frame-tag{display:block}
+.latest-card{cursor:pointer}
+.latest-card .go{color:var(--accent);font-weight:600}
+
+/* featured grid */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .cell{border-radius:13px;overflow:hidden;position:relative;cursor:pointer;background:#e9e2d2}
 .cell img{width:100%;height:196px;object-fit:cover;filter:saturate(1.05) sepia(.08);transition:transform .5s ease}
 .cell:hover img{transform:scale(1.05)}
 .cell .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 9px;background:linear-gradient(transparent,rgba(5,8,20,.72));color:#fff;font-size:13px}
-.cell .cap .en{display:block;font-size:9px;letter-spacing:.3em;color:rgba(255,255,255,.6)}
-.cell.hide{display:none}
+.more-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:196px;background:linear-gradient(150deg,var(--navy-1),var(--navy-2));color:#fff;border-radius:13px;cursor:pointer;border:1px solid var(--hair)}
+.more-cell .n{font-size:30px;font-weight:600}
+.more-cell .s{font-size:12px;letter-spacing:.3em;color:rgba(255,255,255,.65)}
+
+/* album shelf & book */
+.shelf{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.book{border-radius:14px;overflow:hidden;background:#fff;border:1px solid rgba(28,36,52,.12);cursor:pointer;text-align:left;padding:0;font-family:inherit;width:100%}
+.book .cover{height:190px;overflow:hidden;position:relative}
+.book .cover img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) sepia(.08);transition:transform .5s ease}
+.book:hover .cover img{transform:scale(1.05)}
+.book .bmeta{padding:13px 15px 14px}
+.book .ben{font-size:9.5px;letter-spacing:.3em;color:var(--accent);text-transform:uppercase}
+.book .bt{font-size:17.5px;font-weight:600;line-height:1.4;margin-top:2px}
+.book .bn{font-size:12.5px;color:var(--ink-soft);line-height:1.6;margin-top:3px}
+.book .bc{font-size:12px;color:var(--ink-soft);letter-spacing:.1em;margin-top:7px}
+.bookview-head{margin-bottom:20px}
+.backbtn{appearance:none;border:1px solid rgba(28,36,52,.25);background:transparent;border-radius:999px;padding:6px 18px;font-size:13.5px;letter-spacing:.1em;cursor:pointer;color:var(--ink);font-family:inherit;margin-bottom:16px}
+.backbtn:hover{border-color:var(--accent)}
+.bookgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 14px}
+.photo{margin:0}
+.photo .ph{border-radius:11px;overflow:hidden;background:#e9e2d2;cursor:zoom-in}
+.photo img{width:100%;height:210px;object-fit:cover;filter:saturate(1.05) sepia(.08)}
+.photo figcaption{padding:7px 3px 0;font-size:13.5px;line-height:1.6}
+.photo .pd{display:block;font-size:11px;color:var(--ink-soft);letter-spacing:.14em}
+
+/* lightbox */
 .lightbox{position:fixed;inset:0;background:rgba(4,6,14,.93);display:none;align-items:center;justify-content:center;z-index:50;flex-direction:column;padding:20px}
 .lightbox.open{display:flex}
 .lightbox img{max-width:min(92vw,760px);max-height:76vh;border-radius:12px}
-.lightbox .lcap{color:#fff;margin-top:14px;font-size:15px;letter-spacing:.05em}
+.lightbox .lcap{color:#fff;margin-top:14px;font-size:15px;letter-spacing:.05em;text-align:center}
+.lightbox .lcount{color:rgba(255,255,255,.55);font-size:12.5px;letter-spacing:.24em;margin-top:5px}
 .lightbox .nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff;width:44px;height:44px;border-radius:50%;font-size:19px;cursor:pointer}
 .lightbox .prev{left:16px}.lightbox .next{right:16px}
 .lightbox .close{position:absolute;top:16px;right:16px;background:transparent;border:0;color:#fff;font-size:27px;cursor:pointer}
@@ -200,12 +229,15 @@ html[data-theme="halloween"] .hw-frame-tag{display:block}
 .video-box{border-radius:16px;overflow:hidden;border:1px solid var(--hair);background:var(--navy-0);position:relative}
 .video-box video{width:100%;max-height:480px;display:block}
 .video-meta{display:flex;justify-content:space-between;padding:11px 16px;color:rgba(255,255,255,.75);font-size:12.5px;letter-spacing:.06em;background:var(--navy-1)}
+.video-desc{font-size:14px;color:var(--ink-soft);margin-top:12px}
+.video-src{font-size:12.5px;color:var(--ink-soft);margin-top:4px}
 .timeline{border-left:1.6px solid var(--hair);margin-left:8px;padding-left:26px}
 .tl{position:relative;padding:9px 0}
 .tl::before{content:"";position:absolute;left:-31.6px;top:19px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2.2px solid var(--accent)}
 .tl .d{font-size:12px;letter-spacing:.2em;color:var(--ink-soft)}
 .tl .t{font-weight:600;font-size:16.5px}
 .tl .x{color:var(--ink-soft);font-size:14px}
+.tl .thumb{margin-top:8px;width:150px;height:100px;object-fit:cover;border-radius:9px;cursor:zoom-in;filter:saturate(1.05) sepia(.08)}
 .life-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .life{border:1px solid rgba(28,36,52,.1);border-radius:14px;background:#fff;padding:17px 18px;display:flex;gap:14px;align-items:flex-start}
 .life svg{flex:0 0 auto;margin-top:3px}
@@ -218,20 +250,24 @@ html[data-theme="halloween"] footer .hw-line{display:block}
 @media (max-width:640px){
   .hero-name{font-size:47px}
   .avatar{width:118px;height:118px}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(3){border-left:0}
-  .stat{border-top:1px solid var(--hair-light)}
-  .stat:nth-child(-n+2){border-top:0}
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .stat b{font-size:15px}
+  .stat span{letter-spacing:.12em}
   .health-grid{grid-template-columns:1fr}
   .grid{grid-template-columns:repeat(2,1fr)}
+  .shelf{grid-template-columns:repeat(2,1fr)}
+  .bookgrid{grid-template-columns:repeat(2,1fr)}
+  .photo img{height:160px}
   .cell img{height:158px}
+  .more-cell{min-height:158px}
   .life-grid{grid-template-columns:1fr}
   .ghost{font-size:54px}
   .moon{width:84px;height:84px;top:118px;right:4%}
-  .featured img{height:250px}
   .pgrid img{height:106px}
   .post-single{height:215px}
   .id-grid{grid-template-columns:1fr 1fr;gap:11px 14px}
+  .tabbtn{padding:8px 13px;font-size:14px;letter-spacing:.1em}
+  .rec .d{min-width:96px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -273,15 +309,15 @@ html[data-theme="halloween"] footer .hw-line{display:block}
       <div class="hero-text">
         <div class="kicker">Jin Doudou · British Shorthair</div>
         <h1 class="hero-name serif">金豆豆</h1>
-        <div class="hero-sub">英国短毛猫（蓝猫） · 公猫 · 纯室内生活</div>
+        <div class="hero-sub">英国短毛猫（蓝猫） · 公猫 · 纯室内猫</div>
+        <p class="hero-notes">纯室内猫，从不出门。已绝育。最近一次疫苗应在 2023 年（主人记不清，先说约两年前、后改口 2023 年，日期为估算）。常去宠物医院：待补充。</p>
         <div class="hw-banner">TRICK OR TREAT · 万圣节快乐 · HALLOWEEN EDITION</div>
       </div>
     </div>
     <div class="stats num">
       <div class="stat"><b id="ageText">—</b><span>AGE 年龄</span></div>
-      <div class="stat"><b>约 7.5 kg</b><span>WEIGHT 体重</span></div>
-      <div class="stat"><b>5 月 16 日</b><span>BIRTHDAY 生日</span></div>
-      <div class="stat"><b id="bdayText">—</b><span>NEXT BIRTHDAY</span></div>
+      <div class="stat"><b>15 斤</b><span>WEIGHT 当前体重</span></div>
+      <div class="stat"><b id="bdayText">—</b><span>DAYS TO BIRTHDAY 距生日</span></div>
     </div>
   </div>
   <svg class="skyline" viewBox="0 0 880 92" preserveAspectRatio="none" aria-hidden="true">
@@ -296,10 +332,22 @@ html[data-theme="halloween"] footer .hw-line{display:block}
   <div class="egg" id="egg">不给糖就捣蛋！🍬</div>
 </header>
 
+<nav class="tabbar">
+  <div class="tabbar-in" role="tablist" aria-label="档案页签">
+    <button class="tabbtn on" type="button" data-tab="overview">总览</button>
+    <button class="tabbtn" type="button" data-tab="album">相册</button>
+    <button class="tabbtn" type="button" data-tab="moments">朋友圈</button>
+    <button class="tabbtn" type="button" data-tab="growth">成长记</button>
+  </div>
+</nav>
+
 <main class="wrap">
 
+<!-- ================= 总览 ================= -->
+<div class="tabpage on" id="page-overview">
+
   <!-- 01 身份证 -->
-  <section class="reveal">
+  <section>
     <div class="sec-head">
       <div class="ghost">01</div>
       <div class="sec-titles"><div class="kicker">Profile</div><h2 class="serif">豆豆身份证</h2></div>
@@ -320,37 +368,27 @@ html[data-theme="halloween"] footer .hw-line{display:block}
         <div>
           <div class="id-title">豆豆身份证 · PET ID CARD</div>
           <div class="id-name serif">金豆豆</div>
-          <div class="id-en">JIN DOUDOU · NO. 20230516-BSH</div>
+          <div class="id-en">JIN DOUDOU · NO. JDD-20230516</div>
         </div>
         <div class="chip" aria-hidden="true"></div>
       </div>
       <div class="id-grid num">
+        <div class="f"><span>姓名 NAME</span><b>金豆豆</b></div>
+        <div class="f"><span>性别 SEX</span><b>公猫</b></div>
         <div class="f"><span>品种 BREED</span><b>英国短毛猫（蓝猫）</b></div>
-        <div class="f"><span>性别 SEX</span><b>公 · 已绝育</b></div>
-        <div class="f"><span>出生日期 BORN</span><b>2023 年 5 月 16 日</b></div>
-        <div class="f"><span>体重 WEIGHT</span><b>约 7.5 kg（15 斤）</b></div>
-        <div class="f"><span>生活方式 LIFESTYLE</span><b>纯室内 · 从不出门</b></div>
-        <div class="f"><span>疫苗 VACCINE</span><b class="warn">2023 年接种 · 待补种</b></div>
+        <div class="f"><span>出生 BORN</span><b>2023 年 5 月 16 日</b></div>
+        <div class="f"><span>绝育 NEUTERED</span><b>已绝育</b></div>
+        <div class="f"><span>生活方式 LIFESTYLE</span><b>纯室内</b></div>
+        <div class="f"><span>体重 WEIGHT</span><b>约 15 斤（7.5 kg）</b></div>
         <div class="f"><span>常去医院 VET</span><b>待补充</b></div>
-        <div class="f"><span>驱虫 DEWORM</span><b>待安排</b></div>
       </div>
       <div class="stamp">万圣节限定<br>HALLOWEEN<br>2026</div>
       <div class="id-foot"><span>签发 · 小乖宠物档案</span><span>ISSUED 2026-10-28</span></div>
     </div>
   </section>
 
-  <div class="hw-divider" aria-hidden="true">
-    <svg width="30" height="30" viewBox="0 0 48 48"><ellipse cx="24" cy="28" rx="16" ry="14" fill="none" stroke="#f08a24" stroke-width="2"/><path d="M24 12 q2-5 7-6" stroke="#5a7d3c" stroke-width="3" fill="none"/></svg>
-    <span class="dot" style="background:#f6c453"></span>
-    <button id="dividerPumpkin" type="button" style="background:none;border:0;cursor:pointer;padding:0" aria-label="南瓜灯彩蛋">
-      <svg width="46" height="46" viewBox="0 0 48 48"><ellipse cx="24" cy="28" rx="18" ry="16" fill="#f08a24"/><path d="M24 10 q2-6 8-7" stroke="#5a7d3c" stroke-width="3.4" fill="none" stroke-linecap="round"/><path d="M16 22 l5 6 -7 1.4 z M32 22 l5 6 -7 1.4 z" fill="#ffe9ad"/><path d="M13 34 q4.6 3.6 7 .4 q2.4 4.4 4.8 1 q3.2 3.8 7.2-.6 q3.4 2.4 4.6-1.4 l-2.4 7 q-10.4 6 -20.8 0 z" fill="#ffe9ad"/></svg>
-    </button>
-    <span class="dot" style="background:#fff3e0"></span>
-    <svg width="30" height="30" viewBox="0 0 48 48"><ellipse cx="24" cy="28" rx="16" ry="14" fill="none" stroke="#f08a24" stroke-width="2"/><path d="M24 12 q2-5 7-6" stroke="#5a7d3c" stroke-width="3" fill="none"/></svg>
-  </div>
-
-  <!-- 02 健康 -->
-  <section class="reveal">
+  <!-- 02 健康驾驶舱 -->
+  <section>
     <div class="sec-head">
       <div class="ghost">02</div>
       <div class="sec-titles"><div class="kicker">Health Cockpit</div><h2 class="serif">健康驾驶舱</h2></div>
@@ -358,124 +396,204 @@ html[data-theme="halloween"] footer .hw-line{display:block}
     </div>
     <div class="health-grid num">
       <div class="hcell"><div class="lab">EXACT AGE 精确年龄</div><div class="big" id="ageBig">—</div><div class="sub">出生于 2023 年 5 月 16 日</div></div>
-      <div class="hcell"><div class="lab">VACCINE 疫苗状态</div><div class="big">待补种</div><div class="sub">上次接种约 2023 年（记录为估算）</div><span class="pill">建议尽快预约加强针</span></div>
-      <div class="hcell"><div class="lab">DEWORMING 驱虫计划</div><div class="big">待安排</div><div class="sub">纯室内猫也建议定期驱虫</div><span class="pill">尚未制定计划</span></div>
+      <div class="hcell"><div class="lab">NEXT BIRTHDAY 距下个生日</div><div class="big" id="bdayBig">—</div><div class="sub" id="bdaySub">—</div></div>
+      <div class="hcell"><div class="lab">VACCINE 疫苗</div><div class="big">待补种</div><div class="sub">上次接种约 2023 年（记录为估算）</div></div>
+      <div class="hcell"><div class="lab">DEWORMING 驱虫</div><div class="big">待安排</div><div class="sub">计划待建立</div></div>
+      <div class="hcell"><div class="lab">NEUTERED 绝育</div><div class="big">已完成</div><div class="sub">公猫 · 已绝育</div></div>
+      <div class="hcell"><div class="lab">WEIGHT 当前体重</div><div class="big">15 斤</div><div class="sub">约 7.5 公斤 · 2026 年 10 月 28 日称的</div></div>
     </div>
+    <div class="todo num"><b>待办提醒 · 1 项已过期：</b>疫苗接种（猫三联/狂犬，种类待确认）——下次日期 2024 年 10 月 28 日，已超期 <span id="overdueDays">—</span> 天，建议约兽医确认并补打。</div>
+  </section>
+
+  <!-- 03 体重记录 -->
+  <section>
+    <div class="sec-head">
+      <div class="ghost">03</div>
+      <div class="sec-titles"><div class="kicker">Weight</div><h2 class="serif">体重记录</h2></div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="records num">
+      <div class="rec"><div class="d">2026-10-28</div><div><span class="t"><i></i>15 斤（约 7.5 公斤）</span> <span class="x">大概15斤左右，初次记录</span></div></div>
+    </div>
+    <p class="note">目前只有这一条体重记录，称得多了，趋势自然就有了。</p>
     <div class="scale">
       <div class="lab" style="font-size:11px;letter-spacing:.3em;color:var(--ink-soft)">BODY CONDITION 体况标尺</div>
       <div class="scale-track">
         <div class="bands"></div><div class="scale-line"></div>
-        <div class="marker" style="left:78%"><i>🎃</i><span class="num">7.5 kg · 偏圆</span></div>
+        <div class="marker" style="left:78%"><i>🎃</i><span class="num">15 斤 · 偏圆</span></div>
       </div>
       <div class="scale-labels"><span>偏瘦</span><span>适中</span><span>偏圆</span><span>圆润</span></div>
-      <p class="note">英短公猫常见体重约 4–7 kg（仅供参考，非兽医诊断）。豆豆目前约 7.5 kg，属偏圆润，建议日常注意食量与运动。目前档案里只有 1 条体重记录，暂不画趋势曲线——称得多了自然就有了。</p>
-    </div>
-    <div class="records num">
-      <div class="rec"><div class="d">2026-10-28</div><div><span class="t"><i></i>体重记录</span> <span class="x">约 7.5 kg（15 斤）</span></div></div>
-      <div class="rec"><div class="d">2024-01-01 · 估算</div><div><span class="t"><i></i>绝育手术</span> <span class="x">已绝育；具体日期为占位估算</span></div></div>
-      <div class="rec"><div class="d">2023-10-28 · 估算</div><div><span class="t"><i></i>疫苗接种</span> <span class="x">最近一次接种约在 2023 年，日期为估算，加强针已超期，待补种</span></div></div>
+      <p class="note">英短公猫常见体重约 4–7 kg（仅供参考，非兽医诊断）。豆豆目前约 7.5 kg，落在「偏圆」一档。</p>
     </div>
   </section>
 
-  <div class="hw-divider" aria-hidden="true">
-    <svg width="28" height="28" viewBox="0 0 48 48"><path d="M24 6 q10 4 8 14 q10 2 6 12 q-6 12 -14 12 t-14-12 q-4-10 6-12 q-2-10 8-14z" fill="none" stroke="#f08a24" stroke-width="2"/><circle cx="19" cy="22" r="2" fill="#f08a24"/><circle cx="29" cy="22" r="2" fill="#f08a24"/><path d="M18 32 q6 4 12 0" stroke="#f08a24" stroke-width="2" fill="none"/></svg>
-    <span class="dot" style="background:#f08a24"></span>
-    <svg width="30" height="30" viewBox="0 0 48 48"><ellipse cx="24" cy="28" rx="16" ry="14" fill="none" stroke="#f08a24" stroke-width="2"/><path d="M24 12 q2-5 7-6" stroke="#5a7d3c" stroke-width="3" fill="none"/></svg>
-    <span class="dot" style="background:#f6c453"></span>
-    <svg width="28" height="28" viewBox="0 0 48 48"><path d="M8 26 q6-8 12 0 q6-8 12 0 q-7 1-11 6 q-2-3-5-3 t-5 3 q-4-5-11-6z" fill="#f08a24" opacity=".85"/></svg>
-  </div>
-
-  <!-- 03 相册 -->
-  <section class="reveal">
-    <div class="sec-head">
-      <div class="ghost">03</div>
-      <div class="sec-titles"><div class="kicker">Gallery</div><h2 class="serif">豆豆相册</h2></div>
-      <div class="sec-line"></div>
-    </div>
-    <div class="filters" role="group" aria-label="相册筛选">
-      <button type="button" data-f="all" class="on">全部</button>
-      <button type="button" data-f="daily">日常</button>
-      <button type="button" data-f="car">坐车</button>
-      <button type="button" data-f="moments">朋友圈</button>
-    </div>
-    <div id="momentsFeed">
-      <article class="post latest">
-        <span class="hw-frame-tag">HAPPY HALLOWEEN</span>
-        <div class="post-head"><span class="badge-static">朋友圈 · 最新一条</span><span class="post-date num">2026-10-29</span></div>
-        <div class="post-title">追着人家🦋杀</div>
-        <div class="post-from">金豆豆老妈 · 微信朋友圈 · 共 6 张</div>
-        <div class="pgrid">
-          <img src="assets/moments-20261029b-1.jpg" alt="金豆豆坐着低头盯着地上的蛾子" data-cap="追着人家🦋杀 · 1/6 对峙">
-          <img src="assets/moments-20261029b-2.jpg" alt="金豆豆在地板上伏身追击蛾子" data-cap="追着人家🦋杀 · 2/6 追击瞬间">
-          <img src="assets/moments-20261029b-3.jpg" alt="金豆豆坐在猫砂袋旁守着蛾子" data-cap="追着人家🦋杀 · 3/6 猫砂旁的守候">
-          <img src="assets/moments-20261029b-4.jpg" alt="蛾子特写" data-cap="追着人家🦋杀 · 4/6 「蝴蝶」本蝶">
-          <img src="assets/moments-20261029b-5.jpg" alt="金豆豆的背影" data-cap="追着人家🦋杀 · 5/6 收兵的背影">
-          <img src="assets/moments-20261029b-6.jpg" alt="金豆豆伸出爪子够蛾子" data-cap="追着人家🦋杀 · 6/6 伸爪够它">
-        </div>
-      </article>
-      <article class="post">
-        <div class="post-head"><span class="badge-static gray">朋友圈</span><span class="post-date num">2026-10-29</span></div>
-        <div class="post-title">周末美好睡大觉</div>
-        <div class="post-from">金豆豆老妈 · 微信朋友圈</div>
-        <img class="post-single" src="assets/moments-20261029.jpg" alt="金豆豆在粉色窗帘旁睡大觉" data-cap="朋友圈 · 周末美好睡大觉 · 2026 年 10 月 29 日">
-      </article>
-    </div>
-    <div class="grid" id="grid">
-      <div class="cell" data-cat="car"><img src="assets/p8.jpg" alt="金豆豆在车里坐姿端正" data-cap="坐姿端正的模范乘客（头像原图）"><div class="cap"><span class="en">IN THE CAR</span>模范乘客 · 头像原图</div></div>
-      <div class="cell" data-cat="car"><img src="assets/p7.jpg" alt="金豆豆在车里张嘴叫" data-cap="坐车也要发表意见"><div class="cap"><span class="en">IN THE CAR</span>坐车也要发表意见</div></div>
-      <div class="cell" data-cat="daily"><img src="assets/p3.jpg" alt="金豆豆趴在地上抬头看镜头" data-cap="抬头杀 · 金瞳正脸"><div class="cap"><span class="en">DAILY</span>抬头杀 · 金瞳正脸</div></div>
-      <div class="cell" data-cat="daily"><img src="assets/p2.jpg" alt="金豆豆在地砖上拉伸" data-cap="拉伸一下 · 猫式瑜伽"><div class="cap"><span class="en">DAILY</span>拉伸一下 · 猫式瑜伽</div></div>
-      <div class="cell" data-cat="daily"><img src="assets/p1.jpg" alt="金豆豆趴在柜子上垂下爪子" data-cap="柜子上的守门员"><div class="cap"><span class="en">DAILY</span>柜子上的守门员</div></div>
-      <div class="cell" data-cat="daily"><img src="assets/p5.jpg" alt="金豆豆在柜子上睡觉" data-cap="柜子上睡到没电"><div class="cap"><span class="en">DAILY</span>柜子上睡到没电</div></div>
-      <div class="cell" data-cat="car"><img src="assets/p9.jpg" alt="金豆豆在夜里的车里抬头" data-cap="夜车里的小好奇"><div class="cap"><span class="en">IN THE CAR</span>夜车里的小好奇</div></div>
-      <div class="cell" data-cat="car"><img src="assets/p10.jpg" alt="金豆豆在车里仰头特写" data-cap="仰头望向零食的方向"><div class="cap"><span class="en">IN THE CAR</span>仰头望向零食的方向</div></div>
-      <div class="cell" data-cat="daily"><img src="assets/p4.jpg" alt="金豆豆在墙角趴着看镜头" data-cap="墙角放空时间"><div class="cap"><span class="en">DAILY</span>墙角放空时间</div></div>
-      <div class="cell" data-cat="daily"><img src="assets/p6.jpg" alt="金豆豆趴在柜子上的侧脸" data-cap="侧颜杀 · 假装深沉"><div class="cap"><span class="en">DAILY</span>侧颜杀 · 假装深沉</div></div>
-    </div>
-  </section>
-
-  <!-- 04 视频 -->
-  <section class="reveal">
+  <!-- 04 健康记录 -->
+  <section>
     <div class="sec-head">
       <div class="ghost">04</div>
+      <div class="sec-titles"><div class="kicker">Care Records</div><h2 class="serif">健康记录</h2></div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="records num">
+      <div class="rec"><div class="d">2025-04-07</div><div><span class="t"><i></i><em class="cat">其他</em>爪部受伤：一趾指甲断裂</span><br><span class="x">照片特写显示：豆豆爪部一趾指甲断裂，趾部有伤口发红。仅记录照片可见情况，照片中未见就医画面。</span></div></div>
+      <div class="rec"><div class="d">2024-03-19</div><div><span class="t"><i></i><em class="cat">就医</em>宠物医院就诊，戴伊丽莎白圈</span><br><span class="x">照片记录：当天在宠物医院诊台上被双手扶住，他俯身抱扶戴着伊丽莎白圈的豆豆；回家后豆豆戴着圈低头吃饭、端坐。照片未显示病名与处置细节，故不另记。</span></div></div>
+      <div class="rec"><div class="d">2024-01-01 · 估算</div><div><span class="t"><i></i><em class="cat">就医</em>绝育手术</span><br><span class="x">已绝育（公猫）。主人说时间久了记不清，日期为占位估算。</span></div></div>
+      <div class="rec"><div class="d">2023-10-28 · 估算</div><div><span class="t"><i></i><em class="cat">疫苗</em>疫苗接种（猫三联/狂犬，种类待确认）</span><br><span class="x">主人先说约两年前，后改口说应该是2023年打的，具体日期记不清，日期为估算。下次日期按常见的一年加强节奏估算，已超期，建议约兽医确认并补打。</span></div></div>
+    </div>
+  </section>
+
+  <!-- 05 最新朋友圈 -->
+  <section>
+    <div class="sec-head">
+      <div class="ghost">05</div>
+      <div class="sec-titles"><div class="kicker">Latest Moments</div><h2 class="serif">最新朋友圈</h2></div>
+      <div class="sec-line"></div>
+    </div>
+    <article class="post latest latest-card" id="latestCard" title="点开看整条帖子">
+      <span class="hw-frame-tag">HAPPY HALLOWEEN</span>
+      <div class="post-head"><span class="badge-static">最新一条</span><span class="post-date num">2026 年 10 月 29 日</span></div>
+      <div class="post-title">追着人家🦋杀</div>
+      <div class="post-from">金豆豆老妈 · 共 6 张组图 · <span class="go">点开看整组 →</span></div>
+      <img class="post-single" src="assets/moments-20261029b-1.jpg" alt="追着人家🦋杀">
+    </article>
+  </section>
+
+  <!-- 06 精选照片 -->
+  <section>
+    <div class="sec-head">
+      <div class="ghost">06</div>
+      <div class="sec-titles"><div class="kicker">Featured</div><h2 class="serif">精选照片</h2></div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="grid" id="featuredGrid">
+      <div class="cell"><img src="assets/p4.jpg" alt="柜子下探头，眼睛亮晶晶" data-cap="柜子下探头，眼睛亮晶晶"><div class="cap">柜子下探头，眼睛亮晶晶</div></div>
+      <div class="cell"><img src="assets/p1.jpg" alt="柜子上托腮，金眼睛瞪圆" data-cap="柜子上托腮，金眼睛瞪圆"><div class="cap">柜子上托腮，金眼睛瞪圆</div></div>
+      <div class="cell"><img src="assets/p8.jpg" alt="车里端端正正坐着" data-cap="车里端端正正坐着"><div class="cap">车里端端正正坐着</div></div>
+      <div class="cell"><img src="assets/p7.jpg" alt="车里张嘴叫，气势很足" data-cap="车里张嘴叫，气势很足"><div class="cap">车里张嘴叫，气势很足</div></div>
+      <div class="cell"><img src="assets/p5.jpg" alt="柜子上睡着了，脸埋进爪子" data-cap="柜子上睡着了，脸埋进爪子"><div class="cap">柜子上睡着了，脸埋进爪子</div></div>
+      <div class="cell"><img src="assets/p2.jpg" alt="地板猫饼，俯视瞪眼" data-cap="地板猫饼，俯视瞪眼"><div class="cap">地板猫饼，俯视瞪眼</div></div>
+      <div class="more-cell" id="moreCell"><span class="n num">75 张照片</span><span class="s">去相册 →</span></div>
+    </div>
+  </section>
+
+  <!-- 07 豆豆视频 -->
+  <section>
+    <div class="sec-head">
+      <div class="ghost">07</div>
       <div class="sec-titles"><div class="kicker">Video</div><h2 class="serif">豆豆视频</h2></div>
       <div class="sec-line"></div>
     </div>
     <div class="video-box">
       <video controls preload="none" poster="assets/video-poster.jpg" src="assets/doudou-durian.mp4"></video>
-      <div class="video-meta"><span>第一次闻榴莲 · 名场面</span><span class="num">0:12 · 金豆豆老妈发来 · 2026-10-28</span></div>
+      <div class="video-meta"><span>金豆豆闻榴莲</span><span class="num">0:12 · 约 12 秒 · 2026 年 10 月 28 日存入</span></div>
+    </div>
+    <p class="video-desc">入档的第一条视频：第一次见榴莲，低着头凑近研究了半天，表情又嫌弃又好奇——好奇心强这条，就是从这儿看出来的。</p>
+    <p class="video-src">来源：主人经微信发来、无法自行转发保存，原文件由档案代为存入。</p>
+  </section>
+</div>
+
+<!-- ================= 相册 ================= -->
+<div class="tabpage" id="page-album">
+  <section>
+    <div class="sec-head">
+      <div class="ghost">✦</div>
+      <div class="sec-titles"><div class="kicker">Albums</div><h2 class="serif">豆豆相册</h2></div>
+      <div class="sec-line"></div>
+    </div>
+    <p class="page-note num">共 6 本相册 · 75 张照片 · 朋友圈照片在「朋友圈」页签里</p>
+    <div id="shelfView">
+      <div class="shelf" id="shelf"></div>
+    </div>
+    <div id="bookView" style="display:none">
+      <button class="backbtn" id="backBtn" type="button">← 返回书架</button>
+      <div class="bookview-head">
+        <div class="kicker" id="bookEn"></div>
+        <h2 class="serif" id="bookTitle" style="font-size:27px;font-weight:600;margin-top:4px"></h2>
+        <p class="page-note" id="bookNote" style="margin:6px 0 0"></p>
+      </div>
+      <div class="bookgrid" id="bookGrid"></div>
     </div>
   </section>
+</div>
 
-  <!-- 05 时间线与生活 -->
-  <section class="reveal">
+<!-- ================= 朋友圈 ================= -->
+<div class="tabpage" id="page-moments">
+  <section>
     <div class="sec-head">
-      <div class="ghost">05</div>
-      <div class="sec-titles"><div class="kicker">Timeline &amp; Life</div><h2 class="serif">成长与生活</h2></div>
+      <div class="ghost">✦</div>
+      <div class="sec-titles"><div class="kicker">Moments</div><h2 class="serif">朋友圈</h2></div>
+      <div class="sec-line"></div>
+    </div>
+    <p class="page-note">共 2 条 · 都由「金豆豆老妈」发布，经微信存入档案</p>
+
+    <article class="post latest">
+      <span class="hw-frame-tag">HAPPY HALLOWEEN</span>
+      <div class="post-head"><span class="badge-static">最新一条</span><span class="post-date num">2026 年 10 月 29 日</span></div>
+      <div class="post-title">追着人家🦋杀</div>
+      <div class="post-from">金豆豆老妈</div>
+      <div class="pgrid" data-post="moth">
+        <img src="assets/moments-20261029b-1.jpg" alt="追着人家🦋杀" data-cap="追着人家🦋杀">
+        <img src="assets/moments-20261029b-2.jpg" alt="在地板上伏身追击" data-cap="在地板上伏身追击">
+        <img src="assets/moments-20261029b-3.jpg" alt="坐在猫砂袋旁，守着蛾子" data-cap="坐在猫砂袋旁，守着蛾子">
+        <img src="assets/moments-20261029b-4.jpg" alt="蛾子特写，被追的这位" data-cap="蛾子特写，被追的这位">
+        <img src="assets/moments-20261029b-5.jpg" alt="一个背影，尾巴翘得高高的" data-cap="一个背影，尾巴翘得高高的">
+        <img src="assets/moments-20261029b-6.jpg" alt="伸爪够蛾子，就差一点" data-cap="伸爪够蛾子，就差一点">
+      </div>
+      <div class="post-foot">共 6 张组图 · 朋友圈 · 经微信存入档案</div>
+    </article>
+
+    <article class="post">
+      <div class="post-head"><span class="badge-static gray">朋友圈</span><span class="post-date num">2026 年 10 月 29 日</span></div>
+      <div class="post-title">周末美好睡大觉</div>
+      <div class="post-from">金豆豆老妈</div>
+      <img class="post-single" src="assets/moments-20261029.jpg" alt="金豆豆在窗边晒着太阳睡觉，前爪伸得直直的" data-cap="周末美好睡大觉">
+      <div class="post-foot">朋友圈 · 经微信存入档案</div>
+    </article>
+  </section>
+</div>
+
+<!-- ================= 成长记 ================= -->
+<div class="tabpage" id="page-growth">
+  <section>
+    <div class="sec-head">
+      <div class="ghost">01</div>
+      <div class="sec-titles"><div class="kicker">Milestones</div><h2 class="serif">成长大事记</h2></div>
       <div class="sec-line"></div>
     </div>
     <div class="timeline num">
-      <div class="tl"><div class="d">2023-05-16</div><div class="t">出生</div><div class="x">一只蓝猫宝宝来到这个世界。</div></div>
-      <div class="tl"><div class="d">2023-10-28 · 估算</div><div class="t">疫苗接种</div><div class="x">最近一次接种约在 2023 年，具体日期是估算的——加强针待补种。</div></div>
-      <div class="tl"><div class="d">2024-01-01 · 占位估算</div><div class="t">绝育手术</div><div class="x">已绝育，具体日期未记录，此处为占位估算。</div></div>
-      <div class="tl"><div class="d">2026-10-28</div><div class="t">正式建档</div><div class="x">宠物档案建立，登记体重约 15 斤。</div></div>
-      <div class="tl"><div class="d">2026-10-29</div><div class="t">第一条朋友圈存档</div><div class="x">金豆豆老妈的朋友圈「周末美好睡大觉」被收进相册。</div></div>
-      <div class="tl"><div class="d">2026-10-29</div><div class="t">第二条朋友圈存档</div><div class="x">金豆豆老妈发布「追着人家🦋杀」——豆豆追一只蛾子的全过程，共 6 张。</div></div>
-    </div>
-    <div class="life-grid" style="margin-top:22px">
-      <div class="life"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a24b" stroke-width="1.6"><path d="M3 11 L12 3 L21 11 M6 10 V21 H18 V10"/></svg><div><div class="t">纯室内生活</div><div class="x">从不出门，活动范围就是整个家——以及偶尔的车里。</div></div></div>
-      <div class="life"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a24b" stroke-width="1.6"><path d="M12 21 C6 16 3 12.6 3 9.2 C3 6.2 5.2 4 8 4 C9.8 4 11.2 4.9 12 6.2 C12.8 4.9 14.2 4 16 4 C18.8 4 21 6.2 21 9.2 C21 12.6 18 16 12 21Z"/></svg><div><div class="t">健康待办</div><div class="x">疫苗加强针待补种，驱虫计划待安排，常去医院待补充。</div></div></div>
-      <div class="life"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a24b" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15.5 14"/></svg><div><div class="t">体重管理</div><div class="x">约 7.5 kg，体况偏圆润——好吃好睡的代价，稍微控制一下食量。</div></div></div>
-      <div class="life"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a24b" stroke-width="1.6"><rect x="3" y="5" width="18" height="15" rx="2"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8.5 5 L10 2.8 H14 L15.5 5"/></svg><div><div class="t">照片来源</div><div class="x">日常与坐车照片由主人提供，朋友圈照片由金豆豆老妈的微信账号发布。</div></div></div>
+      <div class="tl"><div class="d">2023 年 5 月 16 日</div><div class="t">出生</div><div class="x">一只蓝猫宝宝来到这个世界。</div></div>
+      <div class="tl"><div class="d">约 2023 年</div><div class="t">接种疫苗</div><div class="x">估算 / 待确认。</div></div>
+      <div class="tl"><div class="d">约 2023–2024 年</div><div class="t">绝育手术</div><div class="x">估算 / 待确认。</div></div>
+      <div class="tl"><div class="d">2026 年 10 月 28 日</div><div class="t">建立数字档案</div><div class="x">第一笔体重约 15 斤，第一条视频（闻榴莲）入档。</div><img class="thumb" src="assets/video-poster.jpg" alt="金豆豆闻榴莲视频海报" data-cap="金豆豆闻榴莲 · 视频海报"></div>
+      <div class="tl"><div class="d">2026 年 10 月 29 日</div><div class="t">第一条朋友圈入档</div><div class="x">「周末美好睡大觉」。</div><img class="thumb" src="assets/moments-20261029.jpg" alt="周末美好睡大觉" data-cap="周末美好睡大觉"></div>
+      <div class="tl"><div class="d">2026 年 10 月 29 日</div><div class="t">第二条朋友圈存档</div><div class="x">「追着人家🦋杀」，共 6 张。</div><img class="thumb" src="assets/moments-20261029b-1.jpg" alt="追着人家🦋杀" data-cap="追着人家🦋杀"></div>
     </div>
   </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="ghost">02</div>
+      <div class="sec-titles"><div class="kicker">Life Notes</div><h2 class="serif">生活档案</h2></div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="life-grid">
+      <div class="life"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a24b" stroke-width="1.6"><path d="M3 11 L12 3 L21 11 M6 10 V21 H18 V10"/></svg><div><div class="t">纯室内，从不出门</div></div></div>
+      <div class="life"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a24b" stroke-width="1.6"><path d="M4 15 C7 11 11 11 12 14 C13 11 17 11 20 15 M5 19 H19"/></svg><div><div class="t">爱在地砖上摊平</div></div></div>
+      <div class="life"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a24b" stroke-width="1.6"><rect x="4" y="8" width="16" height="12" rx="1.6"/><path d="M4 13 H20"/></svg><div><div class="t">柜子是他的宝座</div></div></div>
+      <div class="life"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a24b" stroke-width="1.6"><path d="M4 16 L5.6 9.4 A2 2 0 0 1 7.6 8 H16.4 A2 2 0 0 1 18.4 9.4 L20 16 M4 16 H20 M6.5 16 V18.5 M17.5 16 V18.5"/></svg><div><div class="t">坐车很淡定</div></div></div>
+      <div class="life"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a24b" stroke-width="1.6"><circle cx="11" cy="11" r="6.5"/><path d="M16 16 L21 21"/></svg><div><div class="t">好奇心强</div></div></div>
+      <div class="life"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a24b" stroke-width="1.6"><path d="M12 20 C7 15.8 4.6 13 4.6 9.6 C4.6 7 6.4 5 8.7 5 C10.1 5 11.3 5.6 12 6.6 C12.7 5.6 13.9 5 15.3 5 C17.6 5 19.4 7 19.4 9.6 C19.4 13 17 15.8 12 20Z"/></svg><div><div class="t">有自己的微信号</div></div></div>
+    </div>
+  </section>
+</div>
+
 </main>
 
 <footer>
   <div class="rule"></div>
   <div class="wrap">
     <div class="hw-line">万圣节快乐 · TRICK OR TREAT · 本主题为 2026 万圣节限定</div>
-    <div>金豆豆的宠物档案 · 建档于 2026 年 10 月 28 日 · 内容持续更新中</div>
+    <div>金豆豆的宠物档案 · 档案建立于 2026 年 10 月 28 日 · 照片与记录均来自主人提供</div>
   </div>
 </footer>
 
@@ -484,16 +602,16 @@ html[data-theme="halloween"] footer .hw-line{display:block}
   <button class="nav prev" id="lbPrev" aria-label="上一张">‹</button>
   <img id="lbImg" src="" alt="">
   <div class="lcap" id="lbCap"></div>
+  <div class="lcount num" id="lbCount"></div>
   <button class="nav next" id="lbNext" aria-label="下一张">›</button>
 </div>
 
 <script>
 (function(){
   var root=document.documentElement;
-  /* 主题：存过的选择优先，否则 2026-11-01 前默认万圣节 */
+  /* 主题：存过的选择优先，否则 2026-11-01（含）前默认万圣节，与档案本体口径一致 */
   var saved=null; try{ saved=localStorage.getItem('doudou-theme'); }catch(e){}
-  var today=new Date();
-  var def=(today < new Date('2026-11-02T00:00:00')) ? 'halloween' : 'classic';
+  var def=(new Date() < new Date('2026-11-02T00:00:00')) ? 'halloween' : 'classic';
   var theme=saved||def;
   var bC=document.getElementById('btnClassic'), bH=document.getElementById('btnHalloween');
   function apply(t){
@@ -506,21 +624,27 @@ html[data-theme="halloween"] footer .hw-line{display:block}
   root.setAttribute('data-theme',theme);
   bC.classList.toggle('on',theme==='classic'); bH.classList.toggle('on',theme==='halloween');
 
-  /* 年龄与下个生日（出生 2023-05-16） */
+  /* 动态数字：年龄 / 距下个生日 / 疫苗超期（与档案本体同为实时计算） */
   var born=new Date('2023-05-16T00:00:00');
-  var now=new Date();
-  var years=now.getFullYear()-born.getFullYear();
-  var months=now.getMonth()-born.getMonth();
-  if(now.getDate()<born.getDate()) months--;
+  var now=new Date(); var today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  var years=today.getFullYear()-born.getFullYear();
+  var months=today.getMonth()-born.getMonth();
+  if(today.getDate()<born.getDate()) months--;
   if(months<0){ years--; months+=12; }
-  document.getElementById('ageText').textContent=years+' 岁 '+months+' 个月';
-  document.getElementById('ageBig').textContent=years+' 岁 '+months+' 个月';
-  var nextB=new Date(now.getFullYear(),4,16);
-  if(nextB<=now) nextB=new Date(now.getFullYear()+1,4,16);
-  var days=Math.ceil((nextB-now)/864e5);
+  var ageStr=years+' 岁 '+months+' 个月';
+  document.getElementById('ageText').textContent=ageStr;
+  document.getElementById('ageBig').textContent=ageStr;
+  var nextB=new Date(today.getFullYear(),4,16);
+  if(nextB<=today) nextB=new Date(today.getFullYear()+1,4,16);
+  var days=Math.round((nextB-today)/864e5);
   document.getElementById('bdayText').textContent='还有 '+days+' 天';
+  document.getElementById('bdayBig').textContent=days+' 天';
+  document.getElementById('bdaySub').textContent=nextB.getFullYear()+' 年 5 月 16 日满 '+(nextB.getFullYear()-2023)+' 岁';
+  var due=new Date('2024-10-28T00:00:00');
+  var overdue=Math.round((today-due)/864e5);
+  document.getElementById('overdueDays').textContent=overdue;
 
-  /* 彩蛋：点月亮或南瓜灯 */
+  /* 彩蛋：点月亮 */
   var egg=document.getElementById('egg'), timer=null;
   function showEgg(x,y){
     egg.style.left=Math.min(x,window.innerWidth-170)+'px';
@@ -530,37 +654,174 @@ html[data-theme="halloween"] footer .hw-line{display:block}
   }
   var moon=document.getElementById('moonBtn');
   moon.addEventListener('click',function(){ var r=moon.getBoundingClientRect(); showEgg(r.left+window.scrollX-10, r.top+window.scrollY); });
-  var dp=document.getElementById('dividerPumpkin');
-  if(dp) dp.addEventListener('click',function(){ var r=dp.getBoundingClientRect(); showEgg(r.left+window.scrollX-30, r.top+window.scrollY); });
 
-  /* 相册筛选：朋友圈是整帖区块，日常/坐车在网格里 */
-  var feed=document.getElementById('momentsFeed');
-  var gridEl=document.getElementById('grid');
-  var cells=Array.prototype.slice.call(document.querySelectorAll('#grid .cell'));
-  document.querySelectorAll('.filters button').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      document.querySelectorAll('.filters button').forEach(function(b){b.classList.remove('on');});
-      btn.classList.add('on');
-      var f=btn.getAttribute('data-f');
-      feed.style.display=(f==='all'||f==='moments')?'':'none';
-      gridEl.style.display=(f==='moments')?'none':'';
-      cells.forEach(function(c){ c.classList.toggle('hide', !(f==='all'||c.getAttribute('data-cat')===f)); });
+  /* 页签切换 */
+  var tabBtns=Array.prototype.slice.call(document.querySelectorAll('.tabbtn'));
+  function goTab(name){
+    tabBtns.forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-tab')===name); });
+    ['overview','album','moments','growth'].forEach(function(n){
+      document.getElementById('page-'+n).classList.toggle('on', n===name);
     });
-  });
+    window.scrollTo({top:0});
+  }
+  tabBtns.forEach(function(b){ b.addEventListener('click',function(){ goTab(b.getAttribute('data-tab')); }); });
+  document.getElementById('latestCard').addEventListener('click',function(){ goTab('moments'); });
+  document.getElementById('moreCell').addEventListener('click',function(){ goTab('album'); });
 
-  /* 灯箱 */
-  var imgs=Array.prototype.slice.call(document.querySelectorAll('#momentsFeed img, #grid img'));
-  var lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCap'), idx=0;
-  function visibleImgs(){ return imgs.filter(function(im){ return im.offsetParent!==null; }); }
-  function openLb(im){ var v=visibleImgs(); idx=Math.max(0,v.indexOf(im)); render(); lb.classList.add('open'); document.body.style.overflow='hidden'; }
-  function render(){ var v=visibleImgs(); var im=v[idx]; if(!im) return; lbImg.src=im.src; lbImg.alt=im.alt; lbCap.textContent=im.getAttribute('data-cap')||im.alt; }
-  function step(d){ var v=visibleImgs(); idx=(idx+d+v.length)%v.length; render(); }
-  imgs.forEach(function(im){ im.style.cursor='zoom-in'; im.addEventListener('click',function(){ openLb(im); }); });
-  document.getElementById('lbClose').addEventListener('click',function(){ lb.classList.remove('open'); document.body.style.overflow=''; });
-  document.getElementById('lbPrev').addEventListener('click',function(){ step(-1); });
-  document.getElementById('lbNext').addEventListener('click',function(){ step(1); });
-  lb.addEventListener('click',function(e){ if(e.target===lb){ lb.classList.remove('open'); document.body.style.overflow=''; } });
-  document.addEventListener('keydown',function(e){ if(!lb.classList.contains('open'))return; if(e.key==='Escape')document.getElementById('lbClose').click(); if(e.key==='ArrowLeft')step(-1); if(e.key==='ArrowRight')step(1); });
+  /* 相册数据：与 Muse 档案本体逐本逐张对齐（顺序按档案，不按文件名） */
+  var A='assets/';
+  var BOOKS=[
+    {title:'2023 · 第一个冬天',en:'First Winter',note:'那年他七个月大 · 从爸爸的 iCloud 相册里找回来的两张',photos:[
+      ['bed-1.jpg','趴在床上眯着眼，脸贴着毯子','2023年12月'],
+      ['bed-2.jpg','坐在床上抬起爪，耳朵竖得直直的','2023年12月']]},
+    {title:'2023 · 豆豆小时候',en:'Kitten Days',note:'四个月大起的幼年时光 · 从爸爸的 iCloud 相册里找回来',photos:[
+      ['sweep-2023-09-doudou-01.jpg','凉席上看逗猫棒，约四月龄','2023年9月'],
+      ['sweep-2023-09-doudou-02.jpg','趴在凉席上被人摸头','2023年9月'],
+      ['sweep-2023-09-doudou-03.jpg','四仰八叉躺在木地板上','2023年9月'],
+      ['sweep-2023-09-doudou-04.jpg','趴在地板与地毯边看镜头','2023年9月'],
+      ['sweep-2023-09-doudou-07.jpg','趴在木地板上伸长前爪','2023年9月'],
+      ['sweep-2023-09-doudou-08.jpg','在床边坐直仰头看窗户','2023年9月'],
+      ['sweep-2023-09-doudou-09.jpg','趴在床上抱着灰色玩偶','2023年9月'],
+      ['sweep-2023-09-doudou-10.jpg','趴在墙角木地板上抬头看镜头','2023年9月'],
+      ['sweep-2023-09-doudou-11.jpg','站在桌上吐舌头大特写','2023年9月'],
+      ['sweep-2023-09-doudou-12.jpg','从床底探出头','2023年9月'],
+      ['sweep-2023-09-doudou-13.jpg','坐在木地板上正视镜头','2023年9月'],
+      ['sweep-2023-09-doudou-14.jpg','在木地板上拉长身体趴着','2023年9月'],
+      ['sweep-2023-09-doudou-15.jpg','蜷在床上的橙色毯子里','2023年9月'],
+      ['sweep-2023-09-doudou-16.jpg','在床上端正坐着直视镜头','2023年9月'],
+      ['sweep-2023-09-doudou-17.jpg','坐在木地板上仰头看镜头','2023年9月'],
+      ['sweep-2023-09-doudou-18.jpg','趴在凉席上舔前爪，露出肉垫','2023年9月'],
+      ['sweep-2023-09-doudou-19.jpg','戴红色铃铛项圈坐在人工草坪上，旁边是宠物外出背包','2023年9月'],
+      ['sweep-2023-09-22-him-doudou-01.jpg','他躺在床上抱着幼年的豆豆贴脸自拍','2023年9月22日'],
+      ['sweep-2023-09-23-doudou-01.jpg','在橙色水果图案毯子上仰面睡觉','2023年9月23日'],
+      ['sweep-2023-10-03-doudou-01.jpg','戴红色木珠项圈靠坐在米色毯子上，坐姿端正','2023年10月3日'],
+      ['sweep-2023-10-13-doudou-01.jpg','在米奇图案毯子上向镜头走来','2023年10月13日'],
+      ['sweep-2023-10-13-doudou-02.jpg','趴在床上看镜头，戴红项圈，前爪伸出','2023年10月13日'],
+      ['sweep-2023-10-13-doudou-03.jpg','侧躺闭眼打盹，戴红项圈','2023年10月13日'],
+      ['sweep-2023-10-14-her-doudou-01.jpg','她躺在床上把豆豆抱在脸旁，猫头贴着她的脸','2023年10月14日'],
+      ['sweep-2023-11-doudou-02.jpg','脖子上套着黄色软圈，脸埋在床单里','2023年11月'],
+      ['sweep-2023-11-doudou-05.jpg','站立扒着猫抓板玩具箱，旁有猫粮碗','2023年11月'],
+      ['sweep-2023-11-doudou-06.jpg','在床上伸长身体侧睡','2023年11月'],
+      ['sweep-2023-11-doudou-07.jpg','睡颜特写，两只前爪搭在一起','2023年11月'],
+      ['sweep-2023-11-doudou-08.jpg','蜷睡，用前爪遮脸，戴红项圈','2023年11月'],
+      ['sweep-2023-11-doudou-09.jpg','脸部特写侧面，琥珀色眼睛','2023年11月'],
+      ['sweep-2023-11-05-doudou-01.jpg','被人抱着的特写，闭眼一脸满足','2023年11月5日'],
+      ['sweep-2023-11-11-doudou-01.jpg','被手托着，前爪肉垫怼近镜头','2023年11月11日'],
+      ['sweep-2023-11-25-doudou-01.jpg','摊在黑白图案被子上，前爪伸直看镜头','2023年11月25日'],
+      ['sweep-2023-12-doudou-01.jpg','蜷在白色羽绒服上看镜头，双爪交叠','2023年12月'],
+      ['sweep-2023-12-doudou-02.jpg','卧在黑色羽绒服堆里看镜头','2023年12月'],
+      ['sweep-2023-12-doudou-03.jpg','闪光灯下特写，趴在橙色毯子上','2023年12月'],
+      ['sweep-2023-12-her-doudou-01.jpg','她笑着躺在枕头上，豆豆穿粉色绒衣躺在她脸旁','2023年12月'],
+      ['sweep-2023-12-07-doudou-01.jpg','蜷在白色被褥上，前爪交叠','2023年12月'],
+      ['sweep-2023-12-23-her-doudou-01.jpg','被窝里近距离合影，豆豆瞪大眼看镜头','2023年12月23日']]},
+    {title:'2024 · 一岁多的豆豆',en:'One Year Old',note:'一岁多这一年 · 从爸爸的 iCloud 相册里找回来',photos:[
+      ['sweep-2024-01-doudou-01.jpg','穿粉色绒衣坐着，脸上贴了涂鸦贴纸','2024年1月'],
+      ['sweep-2024-02-doudou-01.jpg','在黄色毯子上熟睡的大特写','2024年2月'],
+      ['sweep-2024-02-doudou-02.jpg','坐床边看镜头','2024年2月'],
+      ['sweep-2024-02-doudou-03.jpg','穿薄荷绿粉边衣服躺在毯子上回头看','2024年2月'],
+      ['sweep-2024-02-him-doudou-01.jpg','夜里他搂着豆豆贴脸自拍，猫眯着眼','2024年2月'],
+      ['sweep-2024-02-doudou-05.jpg','在黑色衣物上蜷睡，脸埋在爪边','2024年2月'],
+      ['sweep-2024-02-doudou-06.jpg','人手托着他脖子上的金色铭牌，牌面有猫头图案和「金豆豆」字样','2024年2月'],
+      ['sweep-2024-03-doudou-01.jpg','穿粉色绒背心坐毯子上，表情严肃','2024年3月'],
+      ['sweep-2024-03-doudou-03.jpg','戴伊丽莎白圈端坐地板正对镜头，旁有食碗','2024年3月'],
+      ['sweep-2024-03-doudou-02.jpg','戴伊丽莎白圈低头吃碗里的食物','2024年3月'],
+      ['sweep-2024-03-19-doudou-01.jpg','宠物医院诊台上被双手扶住','2024年3月19日'],
+      ['sweep-2024-03-19-him-doudou-01.jpg','宠物医院里他俯身抱扶戴伊丽莎白圈的豆豆','2024年3月19日'],
+      ['sweep-2024-10-03-doudou-01.jpg','趴在黑色椅面上瞪眼看镜头的面部大特写','2024年10月3日'],
+      ['sweep-2024-10-09-doudou-01.jpg','仰躺在圆形瓦楞纸猫抓窝里露肚皮','2024年10月'],
+      ['sweep-2024-11-18-him-doudou-01.jpg','豆豆穿粉色绒面小衣服，闭眼靠在他下巴旁睡觉','2024年11月18日'],
+      ['sweep-2024-12-15-doudou-01.jpg','在红玫瑰图案床品上蜷成一团睡觉','2024年12月15日']]},
+    {title:'2025 · 在家的日子',en:'Days at Home',note:'在家的日子 · 从爸爸的 iCloud 相册里找回来',photos:[
+      ['sweep-2025-01-27-doudou-01.jpg','从花图案被子下探头，眯眼贴在人腿边','2025年1月27日'],
+      ['sweep-2025-01-27-doudou-02.jpg','在被子与床单间仰头瞪眼看镜头的特写','2025年1月27日'],
+      ['sweep-2025-03-24-doudou-01.jpg','坐在木地板上仰头瞪大黄眼睛看镜头的俯拍特写','2025年3月24日'],
+      ['sweep-2025-07-doudou-01.jpg','整只趴在玻璃面木餐桌上盯镜头','2025年7月'],
+      ['sweep-2025-07-doudou-03.jpg','侧躺在瓷砖地上，旁边一面落地镜','2025年7月'],
+      ['sweep-2025-07-him-doudou-01.jpg','暗光下他抱着豆豆贴脸自拍','2025年7月'],
+      ['sweep-2025-08-doudou-03.jpg','趴在瓷砖地上侧头看镜头','2025年8月'],
+      ['sweep-2025-08-doudou-04.jpg','趴在木条纹餐桌上，下巴搁在纸巾包上看镜头','2025年8月'],
+      ['sweep-2025-08-doudou-06.jpg','仰躺在瓷砖地上露肚皮，爪子蜷起','2025年8月']]},
+    {title:'坐车出门',en:'On the Road',note:'坐车很淡定，上车也不慌',photos:[
+      ['p7.jpg','车里张嘴叫，气势很足',''],
+      ['p8.jpg','车里端端正正坐着',''],
+      ['p9.jpg','车里大头特写',''],
+      ['p10.jpg','仰头特写，好奇心拉满','']]},
+    {title:'日常碎片',en:'Everyday',note:'柜子、地板和窗边的日常',photos:[
+      ['p4.jpg','柜子下探头，眼睛亮晶晶',''],
+      ['p1.jpg','柜子上托腮，金眼睛瞪圆',''],
+      ['p5.jpg','柜子上睡着了，脸埋进爪子',''],
+      ['p2.jpg','地板猫饼，俯视瞪眼',''],
+      ['p6.jpg','柜子上的侧脸，若有所思','']]}
+  ];
+
+  /* 灯箱：按上下文（本书/帖子/精选）成组浏览，序号只在灯箱内显示 */
+  var lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'),
+      lbCap=document.getElementById('lbCap'), lbCount=document.getElementById('lbCount');
+  var lbList=[], lbIdx=0;
+  function lbRender(){
+    var it=lbList[lbIdx]; if(!it) return;
+    lbImg.src=it.src; lbImg.alt=it.cap;
+    lbCap.textContent=it.cap;
+    lbCount.textContent=(lbIdx+1)+' / '+lbList.length;
+  }
+  function lbOpen(list,idx){
+    lbList=list; lbIdx=idx; lbRender();
+    lb.classList.add('open'); document.body.style.overflow='hidden';
+  }
+  function lbCloseFn(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+  function lbStep(d){ if(!lbList.length) return; lbIdx=(lbIdx+d+lbList.length)%lbList.length; lbRender(); }
+  document.getElementById('lbClose').addEventListener('click',lbCloseFn);
+  document.getElementById('lbPrev').addEventListener('click',function(){lbStep(-1);});
+  document.getElementById('lbNext').addEventListener('click',function(){lbStep(1);});
+  lb.addEventListener('click',function(e){ if(e.target===lb) lbCloseFn(); });
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') lbCloseFn();
+    if(e.key==='ArrowLeft') lbStep(-1);
+    if(e.key==='ArrowRight') lbStep(1);
+  });
+  function bindGroup(imgs){
+    var list=imgs.map(function(im){ return {src:im.getAttribute('src'), cap:im.getAttribute('data-cap')||im.alt||''}; });
+    imgs.forEach(function(im,i){ im.addEventListener('click',function(){ lbOpen(list,i); }); });
+  }
+  bindGroup(Array.prototype.slice.call(document.querySelectorAll('#featuredGrid .cell img')));
+  bindGroup(Array.prototype.slice.call(document.querySelectorAll('#page-moments .pgrid img')));
+  bindGroup(Array.prototype.slice.call(document.querySelectorAll('#page-moments .post-single')));
+  bindGroup(Array.prototype.slice.call(document.querySelectorAll('#page-growth .thumb')));
+
+  /* 书架与书内页 */
+  var shelf=document.getElementById('shelf'), shelfView=document.getElementById('shelfView'),
+      bookView=document.getElementById('bookView'), bookGrid=document.getElementById('bookGrid');
+  BOOKS.forEach(function(b,bi){
+    var btn=document.createElement('button');
+    btn.type='button'; btn.className='book';
+    btn.innerHTML='<div class="cover"><img src="'+A+b.photos[0][0]+'" alt="'+b.photos[0][1]+'"></div>'+
+      '<div class="bmeta"><div class="ben">'+b.en+'</div><div class="bt serif">'+b.title+'</div>'+
+      '<div class="bn">'+b.note+'</div><div class="bc num">'+b.photos.length+' 张照片</div></div>';
+    btn.addEventListener('click',function(){ openBook(bi); });
+    shelf.appendChild(btn);
+  });
+  function openBook(bi){
+    var b=BOOKS[bi];
+    document.getElementById('bookEn').textContent=b.en;
+    document.getElementById('bookTitle').textContent=b.title;
+    document.getElementById('bookNote').textContent=b.note+' · 共 '+b.photos.length+' 张';
+    bookGrid.innerHTML='';
+    var list=b.photos.map(function(p){ return {src:A+p[0], cap:p[1]}; });
+    b.photos.forEach(function(p,i){
+      var fig=document.createElement('figure'); fig.className='photo';
+      fig.innerHTML='<div class="ph"><img src="'+A+p[0]+'" alt="'+p[1]+'" loading="lazy"></div>'+
+        '<figcaption>'+p[1]+(p[2]?'<span class="pd num">'+p[2]+'</span>':'')+'</figcaption>';
+      fig.querySelector('img').addEventListener('click',function(){ lbOpen(list,i); });
+      bookGrid.appendChild(fig);
+    });
+    shelfView.style.display='none'; bookView.style.display='';
+    window.scrollTo({top:0});
+  }
+  document.getElementById('backBtn').addEventListener('click',function(){
+    bookView.style.display='none'; shelfView.style.display='';
+    window.scrollTo({top:0});
+  });
 
   /* 静态分享版：内容默认全部可见，不做滚动显隐，避免任何环境下出现空白 */
 })();
